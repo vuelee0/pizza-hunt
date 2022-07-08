@@ -2,6 +2,8 @@ const $addToppingBtn = document.querySelector('#add-topping');
 const $pizzaForm = document.querySelector('#pizza-form');
 const $customToppingsList = document.querySelector('#custom-toppings-list');
 
+
+
 const handleAddTopping = event => {
   event.preventDefault();
 
@@ -36,6 +38,8 @@ const handleAddTopping = event => {
   toppingValue.value = '';
 };
 
+
+
 const handlePizzaSubmit = event => {
   event.preventDefault();
 
@@ -67,8 +71,11 @@ const handlePizzaSubmit = event => {
   })
   .catch(err => {
     console.log(err);
+    saveRecord(formData);
   });
 };
+
+
 
 $pizzaForm.addEventListener('submit', handlePizzaSubmit);
 $addToppingBtn.addEventListener('click', handleAddTopping);
